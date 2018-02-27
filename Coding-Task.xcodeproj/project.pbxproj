@@ -8,12 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		AB32F7D72044F7070007ACFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32F7D62044F7070007ACFD /* AppDelegate.swift */; };
-		AB32F7D92044F7070007ACFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32F7D82044F7070007ACFD /* ViewController.swift */; };
 		AB32F7DC2044F7070007ACFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB32F7DA2044F7070007ACFD /* Main.storyboard */; };
 		AB32F7DE2044F7070007ACFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB32F7DD2044F7070007ACFD /* Assets.xcassets */; };
 		AB32F7E12044F7070007ACFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB32F7DF2044F7070007ACFD /* LaunchScreen.storyboard */; };
 		AB32F7EC2044F7070007ACFD /* Coding_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32F7EB2044F7070007ACFD /* Coding_TaskTests.swift */; };
 		AB32F7F72044F7070007ACFD /* Coding_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32F7F62044F7070007ACFD /* Coding_TaskUITests.swift */; };
+		AB32F80B2044F7A30007ACFD /* TopPostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32F8052044F7A30007ACFD /* TopPostInteractor.swift */; };
+		AB32F80C2044F7A30007ACFD /* TopPostModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32F8062044F7A30007ACFD /* TopPostModels.swift */; };
+		AB32F80D2044F7A30007ACFD /* TopPostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32F8072044F7A30007ACFD /* TopPostPresenter.swift */; };
+		AB32F80E2044F7A30007ACFD /* TopPostRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32F8082044F7A30007ACFD /* TopPostRouter.swift */; };
+		AB32F80F2044F7A30007ACFD /* TopPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32F8092044F7A30007ACFD /* TopPostViewController.swift */; };
+		AB32F8102044F7A30007ACFD /* TopPostWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32F80A2044F7A30007ACFD /* TopPostWorker.swift */; };
+		AB32F8142045023C0007ACFD /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32F8132045023C0007ACFD /* PostTableViewCell.swift */; };
+		AB32F8172045240D0007ACFD /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32F8162045240D0007ACFD /* Client.swift */; };
+		ABA253092045CE9E007C76E3 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA253082045CE9E007C76E3 /* Helper.swift */; };
+		ABA2530B2045DB18007C76E3 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2530A2045DB18007C76E3 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +45,6 @@
 /* Begin PBXFileReference section */
 		AB32F7D32044F7070007ACFD /* Coding-Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coding-Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB32F7D62044F7070007ACFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AB32F7D82044F7070007ACFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AB32F7DB2044F7070007ACFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB32F7DD2044F7070007ACFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB32F7E02044F7070007ACFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +55,16 @@
 		AB32F7F22044F7070007ACFD /* Coding-TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Coding-TaskUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB32F7F62044F7070007ACFD /* Coding_TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coding_TaskUITests.swift; sourceTree = "<group>"; };
 		AB32F7F82044F7070007ACFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB32F8052044F7A30007ACFD /* TopPostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPostInteractor.swift; sourceTree = "<group>"; };
+		AB32F8062044F7A30007ACFD /* TopPostModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPostModels.swift; sourceTree = "<group>"; };
+		AB32F8072044F7A30007ACFD /* TopPostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPostPresenter.swift; sourceTree = "<group>"; };
+		AB32F8082044F7A30007ACFD /* TopPostRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPostRouter.swift; sourceTree = "<group>"; };
+		AB32F8092044F7A30007ACFD /* TopPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPostViewController.swift; sourceTree = "<group>"; };
+		AB32F80A2044F7A30007ACFD /* TopPostWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPostWorker.swift; sourceTree = "<group>"; };
+		AB32F8132045023C0007ACFD /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		AB32F8162045240D0007ACFD /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		ABA253082045CE9E007C76E3 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		ABA2530A2045DB18007C76E3 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +115,9 @@
 		AB32F7D52044F7070007ACFD /* Coding-Task */ = {
 			isa = PBXGroup;
 			children = (
+				AB32F815204523FB0007ACFD /* Common */,
+				AB32F8042044F75D0007ACFD /* Scenes */,
 				AB32F7D62044F7070007ACFD /* AppDelegate.swift */,
-				AB32F7D82044F7070007ACFD /* ViewController.swift */,
 				AB32F7DA2044F7070007ACFD /* Main.storyboard */,
 				AB32F7DD2044F7070007ACFD /* Assets.xcassets */,
 				AB32F7DF2044F7070007ACFD /* LaunchScreen.storyboard */,
@@ -123,6 +142,46 @@
 				AB32F7F82044F7070007ACFD /* Info.plist */,
 			);
 			path = "Coding-TaskUITests";
+			sourceTree = "<group>";
+		};
+		AB32F8042044F75D0007ACFD /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				AB32F8112044F7B40007ACFD /* TopPost */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		AB32F8112044F7B40007ACFD /* TopPost */ = {
+			isa = PBXGroup;
+			children = (
+				AB32F812204502220007ACFD /* Views */,
+				AB32F8052044F7A30007ACFD /* TopPostInteractor.swift */,
+				AB32F8062044F7A30007ACFD /* TopPostModels.swift */,
+				AB32F8072044F7A30007ACFD /* TopPostPresenter.swift */,
+				AB32F8082044F7A30007ACFD /* TopPostRouter.swift */,
+				AB32F8092044F7A30007ACFD /* TopPostViewController.swift */,
+				AB32F80A2044F7A30007ACFD /* TopPostWorker.swift */,
+			);
+			path = TopPost;
+			sourceTree = "<group>";
+		};
+		AB32F812204502220007ACFD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB32F8132045023C0007ACFD /* PostTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AB32F815204523FB0007ACFD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AB32F8162045240D0007ACFD /* Client.swift */,
+				ABA253082045CE9E007C76E3 /* Helper.swift */,
+				ABA2530A2045DB18007C76E3 /* ImageViewController.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +318,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB32F7D92044F7070007ACFD /* ViewController.swift in Sources */,
+				AB32F80B2044F7A30007ACFD /* TopPostInteractor.swift in Sources */,
 				AB32F7D72044F7070007ACFD /* AppDelegate.swift in Sources */,
+				AB32F80D2044F7A30007ACFD /* TopPostPresenter.swift in Sources */,
+				AB32F8142045023C0007ACFD /* PostTableViewCell.swift in Sources */,
+				AB32F8102044F7A30007ACFD /* TopPostWorker.swift in Sources */,
+				ABA253092045CE9E007C76E3 /* Helper.swift in Sources */,
+				AB32F80C2044F7A30007ACFD /* TopPostModels.swift in Sources */,
+				AB32F80F2044F7A30007ACFD /* TopPostViewController.swift in Sources */,
+				AB32F80E2044F7A30007ACFD /* TopPostRouter.swift in Sources */,
+				ABA2530B2045DB18007C76E3 /* ImageViewController.swift in Sources */,
+				AB32F8172045240D0007ACFD /* Client.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
