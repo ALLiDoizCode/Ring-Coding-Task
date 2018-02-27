@@ -29,13 +29,11 @@ class TopPostInteractor: TopPostBusinessLogic, TopPostDataStore {
 
     func getTopPost(request: TopPost.Listing.Request) {
         worker = TopPostWorker()
-        worker?.getTopPost(after:request.after,completion: { (data) in
-            
+        worker?.getTopPost(after: request.after, completion: { data in
+
             var response = TopPost.Listing.Response()
             response.data = data
             self.presenter?.presentTopPost(response: response)
         })
-
-        
     }
 }

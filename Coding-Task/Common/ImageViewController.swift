@@ -9,12 +9,11 @@
 import UIKit
 
 class ImageViewController: UIViewController {
-
-    @IBOutlet weak var imageView: UIImageView!
-    var url:URL!
+    @IBOutlet var imageView: UIImageView!
+    var url: URL!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         guard let imageURl = url else {
             return
         }
@@ -29,11 +28,9 @@ class ImageViewController: UIViewController {
                 if let imageData = data {
                     self.imageView.image = UIImage(data: imageData)
                 }
-                
             }
         }
-        
-        
+
         // Do any additional setup after loading the view.
     }
 
@@ -41,11 +38,12 @@ class ImageViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @objc func saveImage(_ sender: UITapGestureRecognizer) {
+
+    @objc func saveImage(_: UITapGestureRecognizer) {
         UIImageWriteToSavedPhotosAlbum(imageView.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
 
-    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+    @objc func image(_: UIImage, didFinishSavingWithError error: Error?, contextInfo _: UnsafeRawPointer) {
         if let error = error {
             // we got back an error!
             let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
@@ -57,15 +55,14 @@ class ImageViewController: UIViewController {
             present(ac, animated: true)
         }
     }
-    
+
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
 }

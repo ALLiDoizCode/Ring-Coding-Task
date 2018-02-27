@@ -18,59 +18,55 @@ enum TopPost {
 
     enum Listing {
         struct Request {
-            var after:String!
+            var after: String!
         }
-        
+
         struct Response {
-            var data:Data!
+            var data: Data!
         }
-        
-        struct Listings:Codable {
-            
-            var data:ListingData!
-            
+
+        struct Listings: Codable {
+            var data: ListingData!
         }
-        
-        struct ListingData:Codable {
-            var children:[SubReddit] = []
-            var after:String!
+
+        struct ListingData: Codable {
+            var children: [SubReddit] = []
+            var after: String!
         }
-        
-        struct SubReddit:Codable {
-            var data:SubRedditData!
-            
+
+        struct SubReddit: Codable {
+            var data: SubRedditData!
         }
-        
-        struct SubRedditData:Codable {
-            var title:String!
-            var author:String!
-            var created:Int!
-            var thumbnail:String!
-            var num_comments:Int!
-            var preview:Preview!
+
+        struct SubRedditData: Codable {
+            var title: String!
+            var author: String!
+            var created: Int!
+            var thumbnail: String!
+            var num_comments: Int!
+            var preview: Preview!
         }
-        
-        class Preview:Codable {
-            var images:[PreviewImage]?
+
+        class Preview: Codable {
+            var images: [PreviewImage]?
         }
-        
-        class PreviewImage:Codable {
-            var source:ImageSource!
+
+        class PreviewImage: Codable {
+            var source: ImageSource!
         }
-        
-        class ImageSource:Codable {
-            var url:String!
+
+        class ImageSource: Codable {
+            var url: String!
         }
-        
+
         struct ListingModel {
-            
-            var title:String!
-            var author:String!
-            var created:Int!
-            var thumbnail:String!
-            var num_comments:Int!
-            var preview:String!
-            var after:String!
+            var title: String!
+            var author: String!
+            var created: Int!
+            var thumbnail: String!
+            var num_comments: Int!
+            var preview: String!
+            var after: String!
         }
     }
 }

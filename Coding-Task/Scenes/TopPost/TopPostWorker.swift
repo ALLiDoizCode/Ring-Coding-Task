@@ -14,8 +14,8 @@ import UIKit
 
 class TopPostWorker {
     let client = Client()
-    func getTopPost(after:String,completion:@escaping (_ json:Data) -> Void) {
-        client.fetch(after: after) { (json) in
+    func getTopPost(after: String, completion: @escaping (_ json: Data) -> Void) {
+        client.fetch(after: after) { json in
             completion(json)
         }
     }

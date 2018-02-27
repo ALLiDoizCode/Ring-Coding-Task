@@ -9,16 +9,16 @@
 import UIKit
 
 class PostTableViewCell: UITableViewCell {
-    @IBOutlet weak var thumbNail: UIImageView!
-    @IBOutlet weak var author: UILabel!
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var comments: UILabel!
-    @IBOutlet weak var timeCreated: UILabel!
-    var preview:String!
-    var parentController:UIViewController!
+    @IBOutlet var thumbNail: UIImageView!
+    @IBOutlet var author: UILabel!
+    @IBOutlet var title: UILabel!
+    @IBOutlet var comments: UILabel!
+    @IBOutlet var timeCreated: UILabel!
+    var preview: String!
+    var parentController: UIViewController!
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showImage(_:)))
         tapGesture.numberOfTapsRequired = 1
         tapGesture.numberOfTouchesRequired = 1
@@ -31,17 +31,17 @@ class PostTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    @objc func showImage(_ sender: UITapGestureRecognizer) {
+
+    @objc func showImage(_: UITapGestureRecognizer) {
         guard preview != nil else {
             let alert = UIAlertController(title: "No Image Available", message: "There is no high resolution image for this thumbnail", preferredStyle: .alert)
-            
+
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        
+
             parentController.present(alert, animated: true)
             return
         }
-        var decodedString = preview.stringByDecodingHTMLEntities
+        let decodedString = preview.stringByDecodingHTMLEntities
         print(decodedString)
         let controller = parentController.storyboard?.instantiateViewController(withIdentifier: "preview") as! ImageViewController
         let url = URL(string: decodedString)

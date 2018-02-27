@@ -19,10 +19,12 @@ protocol TopPostDisplayLogic: class {
 class TopPostViewController: UIViewController, TopPostDisplayLogic, UITableViewDelegate, UITableViewDataSource {
     var interactor: TopPostBusinessLogic?
     var router: (NSObjectProtocol & TopPostRoutingLogic & TopPostDataPassing)?
-    
-    var top50:[TopPost.Listing.ListingModel] = []
-    @IBOutlet weak var tableView: UITableView!
+
+    var top50: [TopPost.Listing.ListingModel] = []
+    @IBOutlet var tableView: UITableView!
+
     // MARK: Object lifecycle
+
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
@@ -65,9 +67,9 @@ class TopPostViewController: UIViewController, TopPostDisplayLogic, UITableViewD
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        self.tableView.estimatedRowHeight = 100.0
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        getTopPost(after:"")
+        tableView.estimatedRowHeight = 100.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        getTopPost(after: "")
     }
 
     // MARK: DataSource Methods
@@ -93,31 +95,29 @@ class TopPostViewController: UIViewController, TopPostDisplayLogic, UITableViewD
                 if let imageData = data {
                     cell.thumbNail.image = UIImage(data: imageData)
                 }
-                
             }
         }
         return cell
     }
 
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    func tableView(_: UITableView, willDisplay _: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastElement = top50.count - 1
         if indexPath.row == lastElement {
-            getTopPost(after:top50.last?.after ?? "")
+            getTopPost(after: top50.last?.after ?? "")
         }
     }
-    
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+
+    func tableView(tableView _: UITableView, estimatedHeightForRowAtIndexPath _: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
-    
-    func getTopPost(after:String) {
+
+    func getTopPost(after: String) {
         var request = TopPost.Listing.Request()
         request.after = after
         interactor?.getTopPost(request: request)
     }
 
     func displayTopPost(viewModel: [TopPost.Listing.ListingModel]) {
-        
         if viewModel.count == 50 {
             top50 += viewModel
             print(viewModel.count)
@@ -125,7 +125,5 @@ class TopPostViewController: UIViewController, TopPostDisplayLogic, UITableViewD
         DispatchQueue.main.async { // Correct
             self.tableView.reloadData()
         }
-        
-        
     }
 }

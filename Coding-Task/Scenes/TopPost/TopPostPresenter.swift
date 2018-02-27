@@ -22,17 +22,16 @@ class TopPostPresenter: TopPostPresentationLogic {
     // MARK: Do something
 
     func presentTopPost(response: TopPost.Listing.Response) {
-        var listings:TopPost.Listing.Listings!
+        var listings: TopPost.Listing.Listings!
         let decoder = JSONDecoder()
-        var listingArray:[TopPost.Listing.ListingModel] = []
-        
+        var listingArray: [TopPost.Listing.ListingModel] = []
+
         do {
             listings = try decoder.decode(TopPost.Listing.Listings.self, from: response.data)
-            
-        }catch {
-            
+
+        } catch {
         }
-        
+
         for object in listings.data.children {
             var listing = TopPost.Listing.ListingModel()
             listing.after = listings.data.after
@@ -42,9 +41,8 @@ class TopPostPresenter: TopPostPresentationLogic {
             listing.title = object.data.title
             listing.num_comments = object.data.num_comments
             if let preview = object.data.preview {
-            
                 if let images = preview.images {
-                    if let currentImage:TopPost.Listing.PreviewImage? = images[0] {
+                    if let currentImage: TopPost.Listing.PreviewImage? = images[0] {
                         if let sourceImage = currentImage?.source {
                             listing.preview = sourceImage.url ?? ""
                         }
@@ -53,8 +51,7 @@ class TopPostPresenter: TopPostPresentationLogic {
             }
             listingArray.append(listing)
         }
-        
-        
+
         viewController?.displayTopPost(viewModel: listingArray)
     }
 }

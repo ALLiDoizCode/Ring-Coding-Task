@@ -9,30 +9,27 @@
 import Foundation
 
 class Client {
-    
-    func fetch(after:String,completion:@escaping (_ json:Data) -> Void) {
-        
-        let redditURL = URL(string:"https://www.reddit.com/top.json?limit=50&after=\(after)")
-        
+    func fetch(after: String, completion: @escaping (_ json: Data) -> Void) {
+        let redditURL = URL(string: "https://www.reddit.com/top.json?limit=50&after=\(after)")
+
         guard let requestURL = redditURL else {
             return
         }
-        
-        let task = URLSession.shared.dataTask(with: requestURL) {(data, response, error) in
-            
+
+        let task = URLSession.shared.dataTask(with: requestURL) { data, _, error in
+
             guard error == nil else {
                 print("error:\(error.debugDescription)")
                 return
             }
-            
+
             guard let json = data else {
                 return
             }
-            
+
             completion(json)
-        
         }
-        
+
         task.resume()
     }
 }
