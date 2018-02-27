@@ -14,9 +14,15 @@ class ImageViewController: UIViewController {
     var url:URL!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         guard let imageURl = url else {
             return
         }
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(saveImage(_:)))
+        tapGesture.numberOfTapsRequired = 1
+        tapGesture.numberOfTouchesRequired = 1
+        imageView.addGestureRecognizer(tapGesture)
+        imageView.isUserInteractionEnabled = true
         DispatchQueue.global().async {
             let data = try? Data(contentsOf: imageURl)
             DispatchQueue.main.async {
@@ -35,8 +41,23 @@ class ImageViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    @objc func saveImage(_ sender: UITapGestureRecognizer) {
+        UIImageWriteToSavedPhotosAlbum(imageView.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
 
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // we got back an error!
+            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Saved!", message: "Your image has been saved to your photos.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
